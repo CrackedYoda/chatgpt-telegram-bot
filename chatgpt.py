@@ -44,7 +44,7 @@ def help_handler(message):
   bot.send_message(message.chat.id,"this is a bot that makes use of chatgpt model. ask any question or start a conversation")
 
 @bot.message_handler(content_types=['document', 'audio','photo','voice'])
-def handle_docs_audio(message):
+def handle_docs_audio(message): 
 	bot.send_message(message.chat.id,'this is not a text') #when sending a message you nedd to add a chat id
 
 

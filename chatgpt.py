@@ -39,6 +39,9 @@ bot = telebot.TeleBot(TELEGRAM_API_Key) #initiated the telebot with my API keys
 def welcome_message(message):#a function that takes one parameter which is the ""message"" just right under the handler is how pyTelegramBotAPI deals with info
     bot.reply_to(message,"welcome to yoda chatGptBot")
 
+@bot.message_handler(commands=['help'])
+def help_handler(message):
+  bot.send_message(message.chat.id,"this is a bot that makes use of chatgpt model. ask any question or start a conversation")
 
 @bot.message_handler(content_types=['document', 'audio','photo','voice'])
 def handle_docs_audio(message):
